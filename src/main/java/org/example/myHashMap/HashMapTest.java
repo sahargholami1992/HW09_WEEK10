@@ -18,6 +18,8 @@ public class HashMapTest<K,V> {
 
         if (node[index] == null) {
             node[index] = newMyNode;
+            size++;
+
         } else {
             Node<K, V> current = node[index];
             while (current.next != null) {
@@ -31,10 +33,11 @@ public class HashMapTest<K,V> {
                 current.value = value;
             } else {
                 current.next = newMyNode;
+                size++;
             }
         }
 
-        size++;
+
     }
 
     public V get(K key) {
